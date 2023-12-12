@@ -1,14 +1,29 @@
 # Use an official Python runtime as a parent image
-FROM python:3.7
+FROM python:3.8
 
-# Set the working directory to /app
-WORKDIR /app
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Copy the current directory contents into the container at /app
-COPY src/ .
+# Copy the current directory contents into the container at /usr/src/app
+COPY app.py .
 
 # Install any needed packages specified in requirements.txt
-RUN pip3 install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
 
-# Define the command to run your application
-CMD ["python", "dapp.py"]
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
