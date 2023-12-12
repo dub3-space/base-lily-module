@@ -11,11 +11,8 @@
         "Concurrency": 1
       },
       "Docker": {
-        "Entrypoint": [
-          "/usr/games/cowsay",
-          {{if .Message}}{{.Message}}{{else}}"Pass me an input called Message, like lilypad run cowsay:v0.0.2 -i Message=moo"{{end}}
-        ],
-        "Image": "grycap/cowsay@sha256:fad516b39e3a587f33ce3dbbb1e646073ef35e0b696bcf9afb1a3e399ce2ab0b"
+        "Entrypoint":["python", "app.py"],
+        "Image": "bringhi/basic-lily:v0.2@sha256:48c011bd7df3651007a364a63dd817f93b83a86eb71d1eccf99b569eec9352db"
       },
       "Engine": "Docker",
       "Network": {
