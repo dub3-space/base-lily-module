@@ -1,6 +1,9 @@
 # Use an official Python runtime as a parent image
 FROM python:3.8
 
+### We make sure that we have authorizations to write on /tmp
+RUN chmod 777 -R /tmp && chmod o+t -R /tmp
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
