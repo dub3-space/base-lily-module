@@ -18,9 +18,9 @@ sudo mv lilypad /usr/local/bin/lilypad
 ## Run this app with lilypad
 
 ```
-lilypad run github.com/dub3-space/test-lily-module:f60b1fa379b28d3d2702d55d5e0235837af61557 --module-repo https://github.com/dub3-space/test-lily-module --module-hash f60b1fa379b28d3d2702d55d5e0235837af61557 --module-path ./lilypad_module.json.tmpl
+lilypad run github.com/dub3-space/test-lily-module:2b349e1a8a7a723e9975d245ae1a03ad503d2feb --module-repo https://github.com/dub3-space/test-lily-module --module-hash 2b349e1a8a7a723e9975d245ae1a03ad503d2feb --module-path ./lilypad_module.json.tmpl
 ```
-note that `f60b1fa379b28d3d2702d55d5e0235837af61557` is the sha of the commit I want to reference to lilypad. 
+note that `2b349e1a8a7a723e9975d245ae1a03ad503d2feb` is the sha of the commit I want to reference to lilypad. 
 you need to change this with the commit you want to use
 
 ## PAY ATTENTION
