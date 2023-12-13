@@ -12,9 +12,10 @@
       },
       "Docker": {
         "Entrypoint":[
-        "/usr/games/cowsay",
-          {{if .Message}}{{.Message}}{{else}}"Pass me an input called Message, like lilypad run cowsay:v0.0.2 -i Message=moo"{{end}}],
-        "Image": "grycap/cowsay:latest@sha256:fad516b39e3a587f33ce3dbbb1e646073ef35e0b696bcf9afb1a3e399ce2ab0b"
+        "python", 
+        "app.py"
+        ],
+        "Image": "bringhi/basic-lily:v0.6@sha256:4440b119b34b66412463d74e09a615fe45e6487097af855c0381f6c00dfd16dd"
       },
       "Engine": "Docker",
       "Network": {
@@ -26,6 +27,13 @@
       "Resources": {
         "GPU": ""
       },
+       "outputs": [
+                {
+                    "Name": "outputs",
+                    "StorageSource": "IPFS",
+                    "path": "/outputs"
+                }
+            ],
       "Timeout": 1800,
       "Verifier": "Noop"
     }
