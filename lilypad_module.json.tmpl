@@ -1,37 +1,69 @@
 {
-  "machine": {
-    "gpu": 0,
-    "cpu": 1000,
-    "ram": 100
-  },
-  "job": {
-    "APIVersion": "V1beta1",
-    "Spec": {
-      "Deal": {
-        "Concurrency": 1
-      },
-      "Docker": {
-        "Entrypoint":[
-        "python", 
-        "/app/app.py"
-        ],
-        "Image": "bringhi/basic-lily:v0.13@sha256:18c842c6ec3e60d6306f4677e2a2375aa3d3b3ef5067eb9e1728dae188084e15"
-      },
-      "Engine": "Docker",
-      "Network": {
-        "Type": "None"
-      },
-      "PublisherSpec": {
-        "Type": "Estuary"
-      },
-      "Resources": {
-        "GPU": ""
-      },
-      "Timeout": 1800,
-      "Verifier": "Noop"
+    "machine": {
+        "gpu": 1,
+        "cpu": 1000,
+        "ram": 100
+    },
+    "job": {
+        "APIVersion": "V1beta1",
+        "Metadata": {
+            "CreatedAt": "0001-01-01T00:00:00Z",
+            "Requester": {}
+        },
+        "Spec": {
+            "Deal": {
+                "Concurrency": 1
+            },
+            "Docker": {
+                "Entrypoint": [
+                    "python",
+                    "/app/app.py",
+                    "--file-name",
+                    {{.FILENAME}},
+                    "--target-column",
+                    {{.Y}},
+                    "--ignore-columns",
+                    {{.IGNORE1}},
+                    {{.IGNORE2}},
+                    {{.IGNORE3}}
+                ],
+                "Image": "basic-lily:v0.14-drun@sha256:d737c3151c6c9988edb76def54d8f6c1fcf885a62ecc7faf964c4992c79f3413",
+                "EnvironmentVariables": [
+                ]
+            },
+            "Engine": "Docker",
+            "Language": {
+                "JobContext": {}
+            },
+            "Network": {
+                "Type": "None"
+            },
+            "PublisherSpec": {
+                "Type": "Estuary"
+            },
+            "Resources": {
+                "GPU": "1"
+            },
+            "Timeout": 1800,
+            "Verifier": "Noop",
+            "Wasm": {
+                "EntryModule": {}
+            },
+            "inputs": [
+                {
+                    "URL": {{ .URL }},
+                    "Name": "data.csv",
+                    "StorageSource": "urlDownload",
+                    "path": "/inputs"
+                }
+            ],
+            "outputs": [
+                {
+                    "Name": "outputs",
+                    "StorageSource": "IPFS",
+                    "path": "/outputs"
+                }
+            ]
+        }
     }
-  }
 }
-
-
-
