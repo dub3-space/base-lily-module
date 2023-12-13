@@ -13,4 +13,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print("just wrote some shit here broo from main")
+
     main()
