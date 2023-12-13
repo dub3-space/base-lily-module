@@ -22,3 +22,6 @@ lilypad run github.com/dub3-space/test-lily-module:f60b1fa379b28d3d2702d55d5e023
 ```
 note that `f60b1fa379b28d3d2702d55d5e0235837af61557` is the sha of the commit I want to reference to lilypad. 
 you need to change this with the commit you want to use
+
+## PAY ATTENTION
+The docker image need to be built with `--platform linux/amd64` tag otherwise lilypad won't like it 
