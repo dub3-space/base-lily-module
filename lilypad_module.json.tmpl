@@ -13,9 +13,10 @@
       "Docker": {
        "Entrypoint": [
         "python", 
-        "app/app.py"
+        "app/app.py",
+        {{.GREET}}
         ],
-        "Image": "bringhi/basic-lily@sha256:68063d36a6760bd2351c5c393b4c5ce4b12220faf65e2ab13857081754361b98"
+        "Image": "bringhi/basic-lily@sha256:5cbf67a0a6ca01ef45a98af7c1c952e7cd2b0f28e780ce07d7b8bd54ee8a0909"
       },
       "Engine": "Docker",
       "Network": {

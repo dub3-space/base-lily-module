@@ -2,7 +2,9 @@ import os
 import sys
 
 def main():
-    print("just wrote some shit here broo")
+
+    greet = sys.argv[1:]
+    print("just wrote some shit here broo, %s", greet)
 
 
 if __name__ == "__main__":
